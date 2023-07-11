@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* RESET */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* UTILITY CLASESS*/
+.nowrap {
+    white-space: nowrap;
+}
+/* UTILITY CLASESS*/
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    font: 1.5rem "Nunito", sans-serif;
+    min-height: 100vh;
+    background-color: #475569;
+    background-image: radial-gradient(whitesmoke, #475569);
+    display: flex;
+    flex-direction: column;
+}
+
+header , footer {
+    position: sticky;
+    background-color: #1e293b;
+    color: whitesmoke;
+    text-align: center;
+}
+
+header {
+    top: 0;
+}
+
+footer {
+    bottom: 0;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.card {
+    scroll-margin-top: 8rem;
+    width: min(100%, 350px);
+    border: 2px solid black;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #cbd5e1;
+    padding: 1rem;
+}
+
+.card figure {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.card img {
+    border: 5px double #333;
+    border-radius: 50%;
+}
+
+.card figcaption {
+    font-weight: bolder;
+    font-size: 2rem;
+    text-align: center;
+    margin: 1rem;
+}
+
+
+nav {
+    font-weight: bolder;
+    background-color: white;
+    border-bottom: 2px solid black;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0.5rem;
+}
+
+nav a , nav a:visited {
+    color: black;
+}
+
+nav a:hover, 
+nav a:focus {
+    color: hsla(0, 0%, 20%, 0.6);
+}
+
+/* small */
+@media only screen and (min-width: 576px){
+    main {
+        justify-content: center;
+        flex-flow: row wrap;
+        padding: 1rem;
+    }
+    .card {
+        width: min(100% , 400px);
+    }
+    .card:last-child {
+        order: -1;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    nav {
+        display: none;
+    }
+    .card {
+        width: min(100%, 325px);
+    }
+    .card figure {
+        flex-direction: column-reverse;
+    }
+    .card figcaption {
+        margin: 0.1em 0;
+    }
+    .card p {
+        margin-top: 1rem;
+    }
+}
+
+/* Large */
+@media only screen and (min-width: 992px){
+  .card {
+    width: min(100%, 400px);
+  }
+  .card:nth-child(2) {
+    order: -1;
+  }
+}
+
+/* XL */
+
+@media only screen and (min-width: 1200px){
+    .card {
+        width: min(calc(33% - 1rem), 500px);
+    }
+}
+
+
+/* Mobile Landscape*/
+
+@media only screen and (max-height: 499px) and (orientation: landscape){
+    h1 {
+        font-size: 1.5rem;
+    }
+    nav {
+        display: none;
+    }
+    main {
+        justify-content: space-evenly;
+        flex-flow: row nowrap;
+        align-items: stretch;
+    }
+    .card {
+        width: min(calc(33% - 0.25rem), 200px);
+    }
+    .card figcaption 
+    , .card p {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+   
+}
+
+
+
+
+
+
+
+
+
+
+
